@@ -1,0 +1,1 @@
+# tf-azurerm-module_primitive-federated_identity_credential
