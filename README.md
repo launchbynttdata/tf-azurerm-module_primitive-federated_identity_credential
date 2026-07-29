@@ -104,19 +104,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.117 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.117.1 |
 
 ## Modules
 
@@ -132,12 +126,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_audience"></a> [audience](#input\_audience) | The audience as it appears in the external token.<br/>Must be set to 'api://AzureADTokenExchange' to be exchanged for an Entra ID token. | `list(string)` | <pre>[<br/>  "api://AzureADTokenExchange"<br/>]</pre> | no |
+| <a name="input_issuer"></a> [issuer](#input\_issuer) | The URL of the external identity provider | `string` | n/a | yes |
 | <a name="input_name"></a> [name](#input\_name) | The name of the federated identity credential | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The resource group to contain the federated identity credential | `string` | n/a | yes |
-| <a name="input_user_assigned_identity_id"></a> [user\_assigned\_identity\_id](#input\_user\_assigned\_identity\_id) | The ID of the user assigned identity in which to create the federated identity credential | `string` | n/a | yes |
-| <a name="input_issuer"></a> [issuer](#input\_issuer) | The URL of the external identity provider | `string` | n/a | yes |
 | <a name="input_subject"></a> [subject](#input\_subject) | The identifier of the external software workload within the external identity provider | `string` | n/a | yes |
-| <a name="input_audience"></a> [audience](#input\_audience) | The audience as it appears in the external token.<br>Must be set to 'api://AzureADTokenExchange' to be exchanged for an Entra ID token. | `list(string)` | <pre>[<br>  "api://AzureADTokenExchange"<br>]</pre> | no |
+| <a name="input_user_assigned_identity_id"></a> [user\_assigned\_identity\_id](#input\_user\_assigned\_identity\_id) | The ID of the user assigned identity in which to create the federated identity credential | `string` | n/a | yes |
 
 ## Outputs
 
@@ -145,4 +139,4 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | The id of the federated identity credential |
 | <a name="output_name"></a> [name](#output\_name) | The name of the federated identity credential |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
