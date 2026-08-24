@@ -50,9 +50,9 @@ func TestComposableKeyVaultSecret(t *testing.T, ctx types.TestContext) {
 	}
 
 	t.Run("FederatedIdentityCredentialsExists", func(t *testing.T) {
-		name := terraform.Output(t, ctx.TerratestTerraformOptions(), "name")
-		msiName := terraform.Output(t, ctx.TerratestTerraformOptions(), "msi_name")
-		resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
+		name := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "name")
+		msiName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "msi_name")
+		resourceGroupName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "resource_group_name")
 
 		msiClientResp, err := armClient.Get(context.Background(), resourceGroupName, msiName, name, nil)
 		if err != nil {
